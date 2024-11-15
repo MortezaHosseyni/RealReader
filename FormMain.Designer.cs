@@ -39,6 +39,7 @@
             btn_Read = new Button();
             btn_Save = new Button();
             btn_Clear = new Button();
+            btn_ReloadPorts = new Button();
             SuspendLayout();
             // 
             // lbl_Port
@@ -76,6 +77,7 @@
             txt_BaudRate.Name = "txt_BaudRate";
             txt_BaudRate.Size = new Size(330, 29);
             txt_BaudRate.TabIndex = 3;
+            txt_BaudRate.Text = "9600";
             // 
             // txt_Bits
             // 
@@ -85,6 +87,7 @@
             txt_Bits.Name = "txt_Bits";
             txt_Bits.Size = new Size(85, 29);
             txt_Bits.TabIndex = 4;
+            txt_Bits.Text = "8";
             // 
             // cmb_Ports
             // 
@@ -125,6 +128,7 @@
             btn_Read.TabIndex = 8;
             btn_Read.Text = "Read";
             btn_Read.UseVisualStyleBackColor = false;
+            btn_Read.Click += btn_Read_Click;
             // 
             // btn_Save
             // 
@@ -135,6 +139,7 @@
             btn_Save.TabIndex = 9;
             btn_Save.Text = "💾";
             btn_Save.UseVisualStyleBackColor = false;
+            btn_Save.Click += btn_Save_Click;
             // 
             // btn_Clear
             // 
@@ -145,6 +150,18 @@
             btn_Clear.TabIndex = 10;
             btn_Clear.Text = "\U0001f9f9";
             btn_Clear.UseVisualStyleBackColor = false;
+            btn_Clear.Click += btn_Clear_Click;
+            // 
+            // btn_ReloadPorts
+            // 
+            btn_ReloadPorts.BackColor = Color.Black;
+            btn_ReloadPorts.Location = new Point(434, 79);
+            btn_ReloadPorts.Name = "btn_ReloadPorts";
+            btn_ReloadPorts.Size = new Size(39, 29);
+            btn_ReloadPorts.TabIndex = 11;
+            btn_ReloadPorts.Text = "🔄";
+            btn_ReloadPorts.UseVisualStyleBackColor = false;
+            btn_ReloadPorts.Click += btn_ReloadPorts_Click;
             // 
             // FormMain
             // 
@@ -152,6 +169,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(608, 510);
+            Controls.Add(btn_ReloadPorts);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
             Controls.Add(btn_Read);
@@ -172,6 +190,7 @@
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Real Reader";
+            Load += FormMain_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -189,5 +208,6 @@
         private Button btn_Read;
         private Button btn_Save;
         private Button btn_Clear;
+        private Button btn_ReloadPorts;
     }
 }
